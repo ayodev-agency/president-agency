@@ -1,0 +1,700 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+  html {
+    scroll-behavior: smooth;
+}
+  
+
+body {
+    background: linear-gradient(135deg, #0b0f17 0%, #1a2333 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR STYLES --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: rgba(11, 15, 23, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00ffff; /* Restores your neon cyan dot highlight */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 8px; 
+    padding: 0;
+    margin: 0;
+    white-space: nowrap; 
+    overflow-x: auto; /* Add this line right here */
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px; /* Slightly lower font size completely stops clipping */
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00ffff;
+}
+
+
+/* --- SEARCH BAR --- */
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    background: transparent;
+    border: 2px solid #00f0ff;
+    border-right: none;
+    padding: 8px 15px;
+    color: #ffffff;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+}
+
+.search-btn {
+    background-color: #00f0ff;
+    color: #0b0f17;
+    border: 2px solid #00f0ff;
+    padding: 8px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #00b8cc;
+    border-color: #00b8cc;
+}
+
+/* --- HERO CONTAINER --- */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 8% 50px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text h1 span {
+    color: #00f0ff;
+    display: block;
+}
+
+.hero-text p {
+    color: #a0aec0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #00f0ff;
+    color: #0b0f17;
+    padding: 14px 35px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #00b8cc;
+    transform: translateY(-2px);
+}
+
+/* --- LOGIN FORM CARD --- */
+.login-card {
+    background: rgba(15, 22, 36, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    width: 380px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.login-card h2 {
+    text-align: center;
+    color: #0b0f17;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #4a5568;
+    padding: 10px 5px;
+    color: #ffffff;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #00f0ff;
+}
+
+.login-submit-btn {
+    width: 100%;
+    background-color: #00f0ff;
+    color: #0b0f17;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.login-submit-btn:hover {
+    background-color: #00b8cc;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.form-footer a {
+    color: #00f0ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- SOCIAL ICONS --- */
+.social-login {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.social-login p {
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    background: #2d3748;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #00f0ff;
+    color: #0b0f17;
+    transform: scale(1.1);
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 900px) {
+    header { padding: 20px 4%; }
+    .container { padding-top: 120px; flex-direction: column; text-align: center; }
+    .hero-text p { margin: 0 auto 35px auto; }
+    .search-box { display: none; }
+    .login-card { width: 100%; max-width: 380px; }
+}
+.services-section {
+    padding: 100px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.section-title span {
+    color: #00f0ff; /* Keeping our clean electric blue theme */
+}
+
+/* Flexbox/Grid setup to align our 3 cards cleanly side-by-side */
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Automatically drops cards to a new line on smaller screens */
+}
+
+/* Individual Card Styling */
+.service-card {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(15, 22, 36, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease; /* Makes animations feel incredibly smooth */
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #a0aec0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* --- THE MASTER TOUCH ANIMATION --- */
+/* This shifts the entire card up by 10 pixels and glows blue when touched/hovered */
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #00f0ff;
+    box-shadow: 0 15px 30px rgba(0, 240, 255, 0.15);
+}
+.input-group:hover, .services-box:hover, .service-box:hover, .service-card:hover {
+    transform: translateY(-10px);
+    border-color: #00f0ff;
+    box-shadow: 0 15px 30px rgba(0, 240, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+pricing-section {
+  padding: 60px 20px;
+  background-color: #0b0f19; /* Deep tech background */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-title {
+  color: #00ffff; /* Neon Cyan Highlight */
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  color: #a0aec0;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Flexbox layout for responsive cards */
+.pricing-container {
+  display: flex;
+  flex-direction: column; /* Mobile-first default stack */
+  align-items: center;
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Premium Card Layout */
+.pricing-card {
+  background-color: #1a202c; /* Slick gray surface card */
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 35px 25px;
+  width: 100%;
+  max-width: 340px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+/* Standard Box Hover Effects */
+.pricing-card:hover {
+  border-color: #00ffff;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
+}
+
+/* Core Agency Tier Focus Style */
+.premium-card {
+  border: 2px solid #00ffff;
+  box-shadow: 0 10px 35px rgba(0, 255, 255, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00ffff;
+  color: #0b0f19;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* Card Information Components */
+.card-tier {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.price {
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #a0aec0;
+}
+
+/* Bullet Point Stripping & Spacing */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  text-align: left;
+}
+
+.features-list li {
+  color: #cbd5e0;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Premium Cyan Interactive Buttons */
+.cta-btn {
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.cta-btn:hover {
+  background-color: #00ffff;
+  color: #0b0f19;
+}
+
+.premium-btn {
+  background-color: #00ffff;
+  color: #0b0f19;
+}
+
+.premium-btn:hover {
+  background-color: transparent;
+  color: #00ffff;
+}
+
+/* Responsive Grid Upgrade for Bigger Tablet Views & Laptops */
+@media (min-width: 768px) {
+  .pricing-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+.contact-section {
+  padding: 60px 20px;
+  background-color: #0b0f19; /* Deep tech background */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid #1a202c;
+}
+
+.form-title {
+  color: #00ffff; /* Neon Cyan Highlight */
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.form-subtitle {
+  color: #a0aec0;
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+/* Centralized Form Box */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1a202c; /* Sleek surface card gray */
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.hustle-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields & Text Alignment */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+  background-color: #0b0f19;
+  border: 1px solid #2d3748;
+  color: #ffffff;
+  padding: 12px 15px; /* Keeps text away from the input edge */
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Glowing Neon Borders on Active Focus */
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+
+.input-group select option {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+/* Premium Interactive Submission Button */
+.submit-btn {
+  background-color: #00ffff;
+  color: #0b0f19;
+  border: 2px solid #00ffff;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  color: #00ffff;
+}.contact-section {
+  padding: 60px 20px;
+  background-color: #0b0f19; /* Deep tech background */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid #1a202c;
+}
+
+.form-title {
+  color: #00ffff; /* Neon Cyan Highlight */
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.form-subtitle {
+  color: #a0aec0;
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+/* Centralized Form Box */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1a202c; /* Sleek surface card gray */
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.hustle-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields & Text Alignment */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+  background-color: #0b0f19;
+  border: 1px solid #2d3748;
+  color: #ffffff;
+  padding: 12px 15px; /* Keeps text away from the input edge */
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Glowing Neon Borders on Active Focus */
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+
+.input-group select option {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+/* Premium Interactive Submission Button */
+.submit-btn {
+  background-color: #00ffff;
+  color: #0b0f19;
+  border: 2px solid #00ffff;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  color: #00ffff;
+}
